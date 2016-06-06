@@ -212,8 +212,8 @@ crl-verify crl.pem" >> /etc/openvpn/server.conf
             IP=$USEREXTERNALIP
         fi
     fi
-    # client-common.txt is created so we have a template to add further users later
-    echo "client
+# client-common.txt is created so we have a template to add further users later
+echo "client
 dev tun
 proto udp
 sndbuf 0
@@ -229,11 +229,10 @@ comp-lzo
 setenv opt block-outside-dns
 key-direction 1
 verb 3" > /etc/openvpn/client-common.txt
-    # Generates the custom client.ovpn
-    newclient "$CLIENT"
-    echo ""
-    echo "Finished!"
-    echo ""
-    echo "Your client config is available at ~/$CLIENT.ovpn"
-    echo "If you want to add more clients, you simply need to run this script another time!"
-fi
+# Generates the custom client.ovpn
+newclient "$CLIENT"
+echo ""
+echo "Finished!"
+echo ""
+echo "Your client config is available at ~/$CLIENT.ovpn"
+echo "If you want to add more clients, you simply need to run this script another time!
